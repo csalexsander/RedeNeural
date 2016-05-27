@@ -1,0 +1,6 @@
+c:\users\alexsander\documents\visual studio 2015\Projects\RedeNeural\RedeNeural\bin\Debug\RedeNeural.exe.config
+c:\users\alexsander\documents\visual studio 2015\Projects\RedeNeural\RedeNeural\bin\Debug\RedeNeural.exe
+c:\users\alexsander\documents\visual studio 2015\Projects\RedeNeural\RedeNeural\bin\Debug\RedeNeural.pdb
+c:\users\alexsander\documents\visual studio 2015\Projects\RedeNeural\RedeNeural\obj\Debug\RedeNeural.csprojResolveAssemblyReference.cache
+c:\users\alexsander\documents\visual studio 2015\Projects\RedeNeural\RedeNeural\obj\Debug\RedeNeural.exe
+c:\users\alexsander\documents\visual studio 2015\Projects\RedeNeural\RedeNeural\obj\Debug\RedeNeural.pdb
