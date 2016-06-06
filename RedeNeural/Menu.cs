@@ -84,35 +84,41 @@ namespace RedeNeural
 
         private static void treinaNeuronio(Dados dados)
         {
-            var desempenho = 0.0;
-            var i = 0;
-
-            try
+            Console.WriteLine("Insira a quantidade de epocas desejadas!");
+            var epocasDesejadas = double.Parse(Console.ReadLine());
+            for (int epocas = 0; epocas < epocasDesejadas; epocas++)
             {
-                var tamC = Arquivo.qtdDadosColunas(Arquivo.arquivoDados);
-                var tamL = Arquivo.qtdDadosLinhas(Arquivo.arquivoDados);
-                dados.entrada = new double[tamC - 1];
-                verificaArquivosExiste(dados);
+                var desempenho = 0.0;
+                var i = 0;
 
-                for ( i = 0; i < tamL; i++)
+                try
                 {
-                    Arquivo.lePesos(dados);
+                    var tamC = Arquivo.qtdDadosColunas(Arquivo.arquivoDados);
+                    var tamL = Arquivo.qtdDadosLinhas(Arquivo.arquivoDados);
+                    dados.entrada = new double[tamC - 1];
+                    verificaArquivosExiste(dados);
 
-                    for (var j = 0; j < tamC; j++)
+                    for (i = 0; i < tamL; i++)
                     {
-                        if (j != tamC - 1)
-                            dados.entrada[j] = dados.DadosEntrada[i, j];
-                        else
-                            dados.desejado = dados.DadosEntrada[i, j];
+                        Arquivo.lePesos(dados);
+
+                        for (var j = 0; j < tamC; j++)
+                        {
+                            if (j != 0)
+                                dados.entrada[j - 1] = dados.DadosEntrada[i, j];
+                            else
+                                dados.desejado = dados.DadosEntrada[i, j];
+                        }
+                        desempenho = desempenho + 1;
+                        desempenho = Neuronio.TreinaNeuronio(dados, desempenho);
                     }
-                    desempenho = desempenho + 1;
-                    desempenho = Neuronio.TreinaNeuronio(dados, desempenho);
+                    Console.WriteLine((desempenho / i) * 100 + "% de acerto");
                 }
-                Console.WriteLine((desempenho/ i)*100 + "% de acerto");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                Console.WriteLine(epocas + 1 + "epocas");
             }
         }
 

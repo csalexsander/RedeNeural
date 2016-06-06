@@ -53,8 +53,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Arquivos\" />
+    <Content Include="Arquivos\classes.txt" />
+    <Content Include="Arquivos\dados.txt" />
+    <Content Include="Arquivos\testes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
